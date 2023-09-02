@@ -2,19 +2,6 @@ const notescontainer= document.querySelector(".notes-container");
 const btn= document.querySelector(".button");
 let notes= document.querySelectorAll(".input-box");
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBanvAQCU7cYKpMKwdrOT3YjFdZ2W_2wWY",
-  authDomain: "notes-9d6d4.firebaseapp.com",
-  projectId: "notes-9d6d4",
-  storageBucket: "notes-9d6d4.appspot.com",
-  messagingSenderId: "944197419079",
-  appId: "1:944197419079:web:b1263cb9613f9c877b7162",
-  measurementId: "G-NQ13E7HTF2"
-};
-
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
