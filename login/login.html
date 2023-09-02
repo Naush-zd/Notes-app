@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login/SignUp</title>
+    <link rel="icon" href="/image/icon.png" type="image/icon type">
+</head>
+<body>
+
+    <div class="container">
+        <div class="forms-container">
+          <div class="form-control signup-form">
+            <form >
+              <h2>Signup</h2>
+              <input type="text" placeholder="Username" id="username" required />
+              <input type="email" placeholder="Email" id="mail" required />
+              <input type="password" placeholder="Password" id="pwd" />
+              <input type="password" placeholder="Confirm password" id="c_pwd" required />
+              <button onclick="register()">Signup</button>
+            </form>
+            <span>or signup with</span>
+            <div class="socials">
+              <a><i class="fab fa-facebook-f"></i></a>
+              <a><i class="fab fa-google-plus-g"></i></a>
+              <a><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="form-control signin-form">
+            <form action="#">
+              <h2>Signin</h2>
+              <input type="text" placeholder="Username" required />
+              <input type="password" placeholder="Password" required />
+              <button>Signin</button>
+            </form>
+            <span>or signin with</span>
+            <div class="socials">
+              <a><i class="fab fa-facebook-f"></i></a>
+              <a><i class="fab fa-google-plus-g"></i></a>
+              <a><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="intros-container">
+          <div class="intro-control signin-intro">
+            <div class="intro-control__inner">
+              <h2>Welcome back!</h2>
+              <p>
+                Welcome back! We are so happy to have you again. Feel free to add your diary entry.
+              </p>
+              <button id="signup-btn">No account yet? Signup.</button>
+            </div>
+          </div>
+          <div class="intro-control signup-intro">
+            <div class="intro-control__inner">
+              <h2>Come join us!</h2>
+              <p>
+                We are so excited to have you here.If you haven't already, create an account to get personalized experience.
+              </p>
+              <button id="signin-btn">Already have an account? Signin.</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+      <script src="script.js" type="module"></script>
+
+</body>
+</html>
