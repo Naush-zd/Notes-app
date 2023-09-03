@@ -5,14 +5,15 @@ import { getDatabase, ref, set, get, remove } from "https://www.gstatic.com/fire
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCS47xsComykKf4-TavBbRuB5iIu-FzTtA",
-    authDomain: "random-6f797.firebaseapp.com",
-    projectId: "random-6f797",
-    storageBucket: "random-6f797.appspot.com",
-    databaseURL: "https://random-6f797-default-rtdb.asia-southeast1.firebasedatabase.app",
-    messagingSenderId: "881902710887",
-    appId: "1:881902710887:web:b786d2338a101a7d6b64c2"
-};
+    apiKey: "AIzaSyBanvAQCU7cYKpMKwdrOT3YjFdZ2W_2wWY",
+    authDomain: "notes-9d6d4.firebaseapp.com",
+    databaseURL: "https://notes-9d6d4-default-rtdb.firebaseio.com",
+    projectId: "notes-9d6d4",
+    storageBucket: "notes-9d6d4.appspot.com",
+    messagingSenderId: "944197419079",
+    appId: "1:944197419079:web:b1263cb9613f9c877b7162",
+    measurementId: "G-NQ13E7HTF2"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

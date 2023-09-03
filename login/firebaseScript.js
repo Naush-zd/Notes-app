@@ -1,23 +1,22 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 
-// Your web app's Firebase configuration
-// TODO 1: Replace the following with your app's Firebase project configuration
+
 const firebaseConfig = {
-    apiKey: "Add Your Own",
-    authDomain: "Add Your Own",
-    projectId: "Add Your Own",
-    storageBucket: "ADD YOUR OWN",
-    databaseURL: "ADD YOUR OWN",
-    messagingSenderId: "ADD YOUR OWN",
-    appId: "ADD YOUR OWN"
-};
+    apiKey: "AIzaSyBanvAQCU7cYKpMKwdrOT3YjFdZ2W_2wWY",
+    authDomain: "notes-9d6d4.firebaseapp.com",
+    databaseURL: "https://notes-9d6d4-default-rtdb.firebaseio.com",
+    projectId: "notes-9d6d4",
+    storageBucket: "notes-9d6d4.appspot.com",
+    messagingSenderId: "944197419079",
+    appId: "1:944197419079:web:b1263cb9613f9c877b7162",
+    measurementId: "G-NQ13E7HTF2"
+  };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth();
 const database = getDatabase();
 
@@ -30,6 +29,7 @@ const mainContainer = document.querySelector(".container");
 const signup = document.getElementById("signup");
 const signin = document.getElementById("signin");
 const google = document.querySelectorAll(".google");
+const github = document.querySelectorAll(".github");
 const facebook = document.querySelectorAll(".facebook");
 
 signupBtn.addEventListener("click", () => {
@@ -56,6 +56,12 @@ google.forEach((btn) => {
 facebook.forEach((btn) => {
     btn.addEventListener("click", () => {
         loginwithfacebook();
+    });
+});
+
+github.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        loginwithGithub();
     });
 });
 
@@ -129,6 +135,26 @@ function loginwithfacebook() {
     });
 }
 
+function loginwithGithub() {
+    const provider = new GithubAuthProvider();
+    signInWithPopup(auth, provider).then(async (result) => {
+
+        const userobj = {
+            uid: result.user.uid,
+            email: result.user.email,
+            username: result.user.displayName,
+            last_login: Date.now()
+        }
+
+        await set(ref(database, 'users/' + result.user.uid), userobj);
+        localStorage.setItem("uid", result.user.uid);
+        window.location.href = "../index.html";
+    }).catch((err) => {
+        console.log(err);
+        alert(err.message);
+    });
+}
+
 function login() {
     let mail = document.getElementById("email").value;
     let password = document.getElementById("pass").value;
@@ -145,16 +171,16 @@ function login() {
 function validate_email(email) {
     let expression = /^[^@]+@\w+(\.\w+)+\w$/
     if (expression.test(email) == true) {
-        // Email is good
+       
         return true
     } else {
-        // Email is not good
+        
         return false
     }
 }
 
 function validate_password(password) {
-    // Firebase only accepts lengths greater than 6
+
     if (password < 8) {
         return false
     } else {
