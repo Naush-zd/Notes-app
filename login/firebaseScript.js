@@ -4,14 +4,15 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
 
 // Your web app's Firebase configuration
+// TODO 1: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCS47xsComykKf4-TavBbRuB5iIu-FzTtA",
-    authDomain: "random-6f797.firebaseapp.com",
-    projectId: "random-6f797",
-    storageBucket: "random-6f797.appspot.com",
-    databaseURL: "https://random-6f797-default-rtdb.asia-southeast1.firebasedatabase.app",
-    messagingSenderId: "881902710887",
-    appId: "1:881902710887:web:b786d2338a101a7d6b64c2"
+    apiKey: "Add Your Own",
+    authDomain: "Add Your Own",
+    projectId: "Add Your Own",
+    storageBucket: "ADD YOUR OWN",
+    databaseURL: "ADD YOUR OWN",
+    messagingSenderId: "ADD YOUR OWN",
+    appId: "ADD YOUR OWN"
 };
 
 // Initialize Firebase
