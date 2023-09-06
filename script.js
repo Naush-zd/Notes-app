@@ -5,14 +5,14 @@ import { getDatabase, ref, set, get, remove } from "https://www.gstatic.com/fire
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBanvAQCU7cYKpMKwdrOT3YjFdZ2W_2wWY",
-    authDomain: "notes-9d6d4.firebaseapp.com",
-    databaseURL: "https://notes-9d6d4-default-rtdb.firebaseio.com",
-    projectId: "notes-9d6d4",
-    storageBucket: "notes-9d6d4.appspot.com",
-    messagingSenderId: "944197419079",
-    appId: "1:944197419079:web:b1263cb9613f9c877b7162",
-    measurementId: "G-NQ13E7HTF2"
+    apiKey: "Add Yours",
+    authDomain: "Add Yours",
+    databaseURL: "Add Yours",
+    projectId: "Add Yours",
+    storageBucket: "Add Yours",
+    messagingSenderId: "Add Yours",
+    appId: "Add Yours",
+    measurementId: "Add Yours"
   };
 
 // Initialize Firebase
